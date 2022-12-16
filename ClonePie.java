@@ -8,7 +8,7 @@ public class ClonePie {
         pies.add(new Pie(3.5, "Blueberry"));
         pies.add(new Pie(6.5, "Pecan"));
         pies.add(new Pie(8.0, "Pecan"));
-        cloneYummiestPie(pies);
+        system.Out.println(findYummiestPie(input));
         // output [(10.0 "Apple"), (9.5, "Rhubarb"), ..., (10.0, "Appple")]
         
         // yummiestBestOrder(pies);
@@ -24,9 +24,21 @@ public class ClonePie {
         /* write your pseudocode here! - Loop through all the pies to see which two have the highest rating. 
            Then, whichever the two highest are (Apple and Rhubarb) you add them to the arrays list and compare them to the initial pies. 
            If when compared they return a higher number of yumminees, add those to the arrays list and return the list. 
+        */
+    }
+
+public static Pie findYummiestPie(arraylist<Pie> input) {
+    Pie ClonePieRating = input.get(0);
+    for (int i = 1; i < input.size(); i++) {
+        if(input.get(i).yumminess > ClonePieRating.yumminess) {
+            ClonePieRating = input.get(i);
+        }
+    }
+    return ClonePieRating;
+}
+
 
         // give me 2 examples and their output. 
-    }
 
     // inserting the cloned yummiest pie 
     // at an index so that its clone 
